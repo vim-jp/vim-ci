@@ -4,7 +4,7 @@ compiler:
   - gcc
 before_install:
   - sudo apt-get install libperl-dev python3-dev ruby-dev liblua5.1-0-dev lua5.1
-script: cd vim && ./configure --with-features=huge
+script: git submodule update --init && cd vim && ./configure --with-features=huge
   --enable-perlinterp --enable-python3interp
   --enable-rubyinterp --enable-luainterp
   --enable-fail-if-missing && make && make test
