@@ -1,0 +1,3 @@
+# CI project for Vim [![Build Status](https://travis-ci.org/vim/vim-ci.png)](https://travis-ci.org/vim/vim-ci)
+
+http://github.com/vim-jp/vim
