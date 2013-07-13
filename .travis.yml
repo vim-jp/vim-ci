@@ -4,7 +4,8 @@ compiler:
   - gcc
 before_install:
   - git submodule update --init --recursive
-  - sudo apt-get install libperl-dev python-dev python3-dev ruby-dev liblua5.1-0-dev lua5.1
+  - sudo apt-get update
+  - sudo apt-get install libperl-dev python-dev python3-dev ruby1.9.1-dev liblua5.1-0-dev lua5.1
 script: sh ./ci_run.sh
 
 # vim:set sts=2 sw=2 tw=0 et:
