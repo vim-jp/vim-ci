@@ -1,7 +1,8 @@
 #!/bin/sh
 # vim:set sts=2 sw=2 tw=0 et:
 
-cd vim && ./configure \
+cd vim && CFLAGS=-coverage LDFLAGS=-coverage \
+  ./configure \
   --with-features=huge \
   --enable-perlinterp \
   --enable-pythoninterp \
