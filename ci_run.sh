@@ -1,7 +1,7 @@
 #!/bin/sh
 # vim:set sts=2 sw=2 tw=0 et:
 
-cd vim && CFLAGS=-coverage LDFLAGS=-coverage \
+cd vim && \
   ./configure \
   --with-features=huge \
   --enable-perlinterp \
