@@ -1,10 +1,28 @@
 language: c
+
 compiler:
   - clang
   - gcc
+
+env:
+  - COVERAGE=no
+  - COVERAGE=yes CFLAGS=-coverage LDFLAGS=-coverage
+
+matrix:
+  exclude:
+    - compiler: clang
+      env: COVERAGE=yes CFLAGS=-coverage LDFLAGS=-coverage
+    - compiler: gcc
+      env: COVERAGE=no
+
 before_install:
   - sudo apt-get update -qq
   - sudo apt-get install libperl-dev python-dev python3-dev ruby1.9.1-dev liblua5.1-0-dev lua5.1
+  - sudo pip install cpp-coveralls --use-mirrors
+
 script: sh ./ci_run.sh
+
+after_success:
+  - if [ x"$COVERAGE" == "xyes" ] ; then cd vim && coveralls -b src -x .xs -e src/xxd -e src/if_perl.c -e src/hangulin.c -e src/digraph.c; fi
 
 # vim:set sts=2 sw=2 tw=0 et:
