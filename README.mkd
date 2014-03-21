@@ -1,7 +1,8 @@
 # CI project for Vim
 
-[![Build Status](https://travis-ci.org/vim-jp/vim-ci.png?branch=master)](https://travis-ci.org/vim-jp/vim-ci)
+[![Build Status](https://travis-ci.org/vim-jp/vim-ci.svg?branch=master)](https://travis-ci.org/vim-jp/vim-ci)
 [![Coverage Status](https://coveralls.io/repos/vim-jp/vim-ci/badge.png?branch=master)](https://coveralls.io/r/vim-jp/vim-ci)
 
 *   Vim repository - http://github.com/vim-jp/vim
 *   travis-ci project - https://travis-ci.org/vim-jp/vim-ci
+*   coveralls project - https://coveralls.io/r/vim-jp/vim-ci
