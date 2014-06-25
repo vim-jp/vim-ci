@@ -5,15 +5,7 @@ compiler:
   - gcc
 
 env:
-  - COVERAGE=no
-  - COVERAGE=yes CFLAGS=-coverage LDFLAGS=-coverage
-
-matrix:
-  exclude:
-    - compiler: clang
-      env: COVERAGE=yes CFLAGS=-coverage LDFLAGS=-coverage
-    - compiler: gcc
-      env: COVERAGE=no
+  - COVERAGE=yes CFLAGS=--coverage
 
 before_install:
   - sudo apt-get update -qq
@@ -23,6 +15,6 @@ before_install:
 script: sh ./ci_run.sh
 
 after_success:
-  - if [ x"$COVERAGE" == "xyes" ] ; then cd vim && coveralls -b src -x .xs -e src/xxd -e src/if_perl.c -e src/hangulin.c -e src/digraph.c; fi
+  - cd vim && coveralls -b src -x .xs -e src/xxd -e src/if_perl.c --encodings utf-8 latin-1 EUC-KR
 
 # vim:set sts=2 sw=2 tw=0 et:
