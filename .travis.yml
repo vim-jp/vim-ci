@@ -16,6 +16,6 @@ script: sh ./ci_run.sh
 
 after_success:
   - lcov -c -d vim/src -b vim/src -o coverage.info
-  - lcoveralls --retry-count 5 coverage.info
+  - lcoveralls --retry-count 5 -r . coverage.info
 
 # vim:set sts=2 sw=2 tw=0 et:
