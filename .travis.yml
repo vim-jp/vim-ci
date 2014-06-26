@@ -9,12 +9,13 @@ env:
 
 before_install:
   - sudo apt-get update -qq
-  - sudo apt-get install libperl-dev python-dev python3-dev ruby1.9.1-dev liblua5.1-0-dev lua5.1
-  - sudo pip install cpp-coveralls --use-mirrors
+  - sudo apt-get install libperl-dev python-dev python3-dev ruby1.9.1-dev liblua5.1-0-dev lua5.1 lcov rubygems
+  - gem install lcoveralls
 
 script: sh ./ci_run.sh
 
 after_success:
-  - cd vim && coveralls -b src -x .xs -e src/xxd -e src/if_perl.c --encodings utf-8 latin-1 EUC-KR
+  - lcov -c -d vim/src -b vim/src -o coverage.info
+  - lcoveralls --retry-count 5 coverage.info
 
 # vim:set sts=2 sw=2 tw=0 et:
