@@ -5,7 +5,9 @@ compiler:
   - gcc
 
 env:
-  - COVERAGE=yes CFLAGS=--coverage LDFLAGS=--coverage
+  - COVERAGE=yes CFLAGS=--coverage LDFLAGS=--coverage FEATURES=huge
+  - COVERAGE=no FEATURES=small
+  - COVERAGE=no FEATURES=tiny
 
 before_install:
   - sudo apt-get update -qq
