@@ -5,10 +5,10 @@ os: Windows Server 2012
 clone_folder: c:\projects\vim-ci
 
 before_build:
-  - '"C:\\Program Files\\Microsoft SDKs\\Windows\\v7.1\\Bin\\SetEnv.cmd" /x64'
-  - set INCLUDE=%INCLUDE%;"C:\\Program Files (x86)\\Microsoft SDKs\\Windows\\v7.1A\\Include"
+  - '"C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin\SetEnv.cmd" /x64'
+    #- set INCLUDE=%INCLUDE%;"C:\\Program Files (x86)\\Microsoft SDKs\\Windows\\v7.1A\\Include"
   - git submodule update --init --depth 1
 
 build_script:
-  - 'cd vim/src && "C:\\Program Files (x86)\\Microsoft Visual Studio 12.0\\VC\\bin\\nmake" -f Make_mvc.mak CPU=AMD64 GUI=yes IME=yes MBYTE=yes ICONV=yes DEBUG=no'
+  - 'cd vim/src && nmake -f Make_mvc.mak CPU=AMD64 GUI=yes IME=yes MBYTE=yes ICONV=yes DEBUG=no'
 
