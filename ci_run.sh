@@ -3,7 +3,7 @@
 
 cd vim && \
   ./configure \
-  --with-features=huge \
+  --with-features=$FEATURES \
   --enable-perlinterp \
   --enable-pythoninterp \
   --enable-python3interp \
