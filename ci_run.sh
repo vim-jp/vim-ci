@@ -9,4 +9,7 @@ cd vim && \
   --enable-python3interp \
   --enable-rubyinterp \
   --enable-luainterp \
-  --enable-fail-if-missing && make && make test
+  --enable-fail-if-missing && make || exit
+if [ "$TEST" = "yes" ]; then
+  make test
+fi
