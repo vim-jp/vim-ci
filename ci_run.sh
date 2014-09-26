@@ -10,6 +10,9 @@ cd vim && \
   --enable-rubyinterp \
   --enable-luainterp \
   --enable-fail-if-missing && make || exit
+
+./vim --version
+
 if [ "$TEST" = "yes" ]; then
   make test
 fi
