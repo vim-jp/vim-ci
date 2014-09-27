@@ -19,7 +19,7 @@ cd vim && \
   $opt \
   --enable-fail-if-missing && make || exit
 
-./vim --version
+./src/vim --version
 
 if [ "$TEST" = "yes" ]; then
   make test
