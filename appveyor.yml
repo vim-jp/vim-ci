@@ -16,7 +16,5 @@ build_script:
   - type ver.txt
 
 test_script:
-  - curl https://bitbucket.org/k_takata/vim-ktakata-mq/raw/d62eae94f74a2f18317cec28785c514587bcc9b0/workaround-test100.patch | patch -p2
-  - curl https://bitbucket.org/k_takata/vim-ktakata-mq/raw/5912dbd4d0509a80da3c4d1e54f4315f80c421d7/fix-test11-on-windows.patch | patch -p2
   - cd testdir
   - nmake -f Make_dos.mak VIMPROG=..\gvim
