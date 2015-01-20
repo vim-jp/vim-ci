@@ -6,8 +6,8 @@ compiler:
 
 env:
   - COVERAGE=yes TEST=yes CFLAGS=--coverage LDFLAGS=--coverage FEATURES=huge
-  - COVERAGE=no TEST=no FEATURES=small
-  - COVERAGE=no TEST=no FEATURES=tiny
+  - COVERAGE=no TEST=yes FEATURES=small
+  - COVERAGE=no TEST=yes FEATURES=tiny
 
 before_install:
   - sudo apt-get update -qq
