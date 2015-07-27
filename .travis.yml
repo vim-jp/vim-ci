@@ -12,15 +12,15 @@ env:
 sudo: false
 
 addons:
-        apt:
-                packages:
-                        - lcov
-                        - libperl-dev
-                        - python-dev
-                        - python3-dev
-                        - ruby1.9.1-dev
-                        - liblua5.1-0-dev
-                        - lua5.1
+  apt:
+    packages:
+      - lcov
+      - libperl-dev
+      - python-dev
+      - python3-dev
+      - ruby1.9.1-dev
+      - liblua5.1-0-dev
+      - lua5.1
 
 before_install:
   - pip install --user cpp-coveralls
