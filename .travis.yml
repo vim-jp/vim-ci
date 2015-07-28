@@ -21,9 +21,6 @@ addons:
       - liblua5.1-0-dev
       - lua5.1
 
-rvm:
-  - 2.2.2
-
 before_install:
   - pip install --user cpp-coveralls
 
